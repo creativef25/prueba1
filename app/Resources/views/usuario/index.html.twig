@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="center">Usuarios</h1>
+
+    <table class="striped grey lighten-2 centered responsive-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Edad</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td><a href="{{ path('usuario_show', { 'id': usuario.id }) }}">{{ usuario.id }}</a></td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellidoPaterno }}</td>
+                <td>{{ usuario.apellidoMaterno }}</td>
+                <td>{{ usuario.edad }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('usuario_show', { 'id': usuario.id }) }}"><i class="material-icons">visibility</i>Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}"><i class="material-icons">edit</i>Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('usuario_new') }}" class="btn-floating btn-large waves-effect waves-light black"><i class="medium material-icons">add</i></a>
+        </li>
+    </ul>
+{% endblock %}

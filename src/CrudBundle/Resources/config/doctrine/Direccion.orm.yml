@@ -1,0 +1,27 @@
+CrudBundle\Entity\Direccion:
+    type: entity
+    table: null
+    repositoryClass: CrudBundle\Repository\DireccionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: 255
+            column: Calle
+        colonia:
+            type: string
+            length: 255
+            column: Colonia
+        delegacion:
+            type: string
+            length: 255
+            column: Delegacion
+        numero:
+            type: integer
+            column: Numero
+    lifecycleCallbacks: {  }

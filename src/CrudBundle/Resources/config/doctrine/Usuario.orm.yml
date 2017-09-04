@@ -1,0 +1,27 @@
+CrudBundle\Entity\Usuario:
+    type: entity
+    table: null
+    repositoryClass: CrudBundle\Repository\UsuarioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+            column: Nombre
+        apellidoPaterno:
+            type: string
+            length: 255
+            column: ApellidoPaterno
+        apellidoMaterno:
+            type: string
+            length: 255
+            column: ApellidoMaterno
+        edad:
+            type: integer
+            column: Edad
+    lifecycleCallbacks: {  }

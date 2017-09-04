@@ -1,0 +1,24 @@
+direccion_index:
+    path:     /
+    defaults: { _controller: "CrudBundle:Direccion:index" }
+    methods:  GET
+
+direccion_show:
+    path:     /{id}/show
+    defaults: { _controller: "CrudBundle:Direccion:show" }
+    methods:  GET
+
+direccion_new:
+    path:     /new
+    defaults: { _controller: "CrudBundle:Direccion:new" }
+    methods:  [GET, POST]
+
+direccion_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CrudBundle:Direccion:edit" }
+    methods:  [GET, POST]
+
+direccion_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CrudBundle:Direccion:delete" }
+    methods:  DELETE
