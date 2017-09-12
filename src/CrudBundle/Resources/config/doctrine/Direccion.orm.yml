@@ -24,4 +24,9 @@ CrudBundle\Entity\Direccion:
         numero:
             type: integer
             column: Numero
+    manyToOne:
+      usuarios:
+        targetEntity: Usuario
+
+
     lifecycleCallbacks: {  }

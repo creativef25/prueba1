@@ -67,6 +67,10 @@ class Usuario
         return $this->nombre;
     }
 
+    public function __toString(){
+      return $this->nombre;
+    }
+
     /**
      * Set apellidoPaterno
      *
@@ -139,4 +143,3 @@ class Usuario
         return $this->edad;
     }
 }
-
