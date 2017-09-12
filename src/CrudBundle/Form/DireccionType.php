@@ -5,6 +5,7 @@ namespace CrudBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class DireccionType extends AbstractType
 {
@@ -13,7 +14,7 @@ class DireccionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('calle')->add('colonia')->add('delegacion')->add('numero')->add('usuarios');
+        $builder->add('calle')->add('colonia')->add('delegacion')->add('numero')->add('usuarios', ChoiceType::class);
     }
 
     /**
