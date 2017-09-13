@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Direccions list</h1>
+    <h1 class="center">Direcciones</h1>
 
-    <table>
+  <div class="container">
+    <table class="striped grey lighten-2 centered responsive-table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -11,6 +12,7 @@
                 <th>Colonia</th>
                 <th>Delegacion</th>
                 <th>Numero</th>
+                <th>Usuario</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,13 +24,14 @@
                 <td>{{ direccion.colonia }}</td>
                 <td>{{ direccion.delegacion }}</td>
                 <td>{{ direccion.numero }}</td>
+                <td>{{ direccion.usuarios}}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('direccion_show', { 'id': direccion.id }) }}">show</a>
+                            <a href="{{ path('direccion_show', { 'id': direccion.id }) }}"><i class="material-icons">visibility</i>Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('direccion_edit', { 'id': direccion.id }) }}">edit</a>
+                            <a href="{{ path('direccion_edit', { 'id': direccion.id }) }}"><i class="material-icons">edit</i>Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -36,10 +39,10 @@
         {% endfor %}
         </tbody>
     </table>
+  </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('direccion_new') }}">Create a new direccion</a>
-        </li>
-    </ul>
+  <div class="fixed-action-btn">
+      <a href="{{ path('direccion_new') }}" class="btn-floating right btn-large waves-effect waves-light black"><i class="medium material-icons">add</i></a>
+  </div>
+
 {% endblock %}

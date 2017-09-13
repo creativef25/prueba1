@@ -14,7 +14,7 @@ class DireccionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('calle')->add('colonia')->add('delegacion')->add('numero')->add('usuarios', ChoiceType::class);
+        $builder->add('calle')->add('colonia')->add('delegacion')->add('numero')->add('usuarios');
     }
 
     /**
