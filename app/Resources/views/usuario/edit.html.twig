@@ -35,12 +35,12 @@
         {{ form_widget(edit_form) }}
 
         <div class="fixed-action-btn horizontal">
-          <a class="btn-floating btn-large grey darken-2 pulse">
+          <a class="btn-floating btn-large grey darken-2 pulse tooltipped" data-position="top" data-tooltip="Opciones">
             <i class="material-icons">more</i>
           </a>
           <ul>
-            <li><a  href="{{ path('usuario_index') }}" class="btn-floating grey darken-2"><i class="material-icons">backspace</i></a></li>
-            <li><button type="submit" value="Edit" class="btn-floating waves-effect waves-light grey darken-2"><i class="material-icons">edit</i></button></li>
+            <li><a  href="{{ path('usuario_index') }}" class="btn-floating grey darken-2 tooltipped" data-position="top" data-tooltip="Usuarios"><i class="material-icons">backspace</i></a></li>
+            <li><button type="submit" value="Edit" class="btn-floating waves-effect waves-light grey darken-2 tooltipped" data-position="top" data-tooltip="Actualizar"><i class="material-icons">edit</i></button></li>
           </ul>
         </div>
     {{ form_end(edit_form) }}

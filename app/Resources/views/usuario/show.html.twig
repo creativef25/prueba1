@@ -25,13 +25,13 @@
             {{ form_start(delete_form) }}
 
             <div class="fixed-action-btn horizontal">
-              <a class="btn-floating btn-large grey darken-2 pulse">
+              <a class="btn-floating btn-large grey darken-2 pulse tooltipped" data-position="top" data-tooltip="Opciones">
                 <i class="material-icons">more</i>
               </a>
               <ul>
-                <li><a  href="{{ path('usuario_index') }}" class="btn-floating grey darken-2"><i class="material-icons">backspace</i></a></li>
-                <li><a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" class="btn-floating grey darken-2"><i class="material-icons">edit</i></a></li>
-                <li><button type="submit" value="Delete" class="btn-floating waves-effect waves-light grey darken-2"><i class="material-icons">delete</i></button></li>
+                <li><a  href="{{ path('usuario_index') }}" class="btn-floating grey darken-2 tooltipped" data-position="top" data-tooltip="Usuarios"><i class="material-icons">backspace</i></a></li>
+                <li><a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" class="btn-floating grey darken-2 tooltipped" data-position="top" data-tooltip="Editar"><i class="material-icons">edit</i></a></li>
+                <li><button type="submit" value="Delete" class="btn-floating waves-effect waves-light grey darken-2 tooltipped" data-position="top" data-tooltip="Eliminar"><i class="material-icons">delete</i></button></li>
               </ul>
             </div>
 
