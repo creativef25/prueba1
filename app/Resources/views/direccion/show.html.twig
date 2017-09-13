@@ -1,44 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Direccion</h1>
+    <h1 class="center">Direccion</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ direccion.id }}</td>
-            </tr>
-            <tr>
-                <th>Calle</th>
-                <td>{{ direccion.calle }}</td>
-            </tr>
-            <tr>
-                <th>Colonia</th>
-                <td>{{ direccion.colonia }}</td>
-            </tr>
-            <tr>
-                <th>Delegacion</th>
-                <td>{{ direccion.delegacion }}</td>
-            </tr>
-            <tr>
-                <th>Numero</th>
-                <td>{{ direccion.numero }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+      <table class="striped centered">
+        <tr>
+          <td><strong>Id</strong></td>
+          <td><strong>Calle</strong></td>
+          <td><strong>Colonia</strong></td>
+          <td><strong>Delegacion</strong></td>
+          <td><strong>Numero</strong></td>
+          <td><strong>Usuario</strong></td>
+        </tr>
+        <tr>
+          <td>{{ direccion.id}}</td>
+          <td>{{ direccion.calle}}</td>
+          <td>{{ direccion.colonia}}</td>
+          <td>{{ direccion.delegacion}}</td>
+          <td>{{ direccion.numero}}</td>
+          <td>{{ direccion.usuarios}}</td>
+        </tr>
+      </table>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('direccion_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('direccion_edit', { 'id': direccion.id }) }}">Edit</a>
-        </li>
-        <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+
+            <div class="fixed-action-btn horizontal">
+              <a class="btn-floating btn-large grey darken-2">
+                <i class="material-icons">more</i>
+              </a>
+              <ul>
+                <li><a  href="{{ path('direccion_index') }}" class="btn-floating grey darken-2"><i class="material-icons">backspace</i></a></li>
+                <li><a href="{{ path('direccion_edit', { 'id': direccion.id }) }}" class="btn-floating grey darken-2"><i class="material-icons">edit</i></a></li>
+                <li><button type="submit" value="Delete" class="btn-floating waves-effect waves-light grey darken-2"><i class="material-icons">delete</i></button></li>
+              </ul>
+            </div>
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}
