@@ -2,6 +2,7 @@
 
 {% block body %}
     <h1 class="center">Usuarios</h1>
+  <div class="container">
 
     <table class="striped grey lighten-2 centered responsive-table">
         <thead>
@@ -36,10 +37,10 @@
         {% endfor %}
         </tbody>
     </table>
+  </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('usuario_new') }}" class="btn-floating btn-large waves-effect waves-light black"><i class="medium material-icons">add</i></a>
-        </li>
-    </ul>
+  <div class="fixed-action-btn">
+      <a href="{{ path('usuario_new') }}" class="btn-floating right btn-large waves-effect waves-light black"><i class="medium material-icons">add</i></a>
+  </div>
+
 {% endblock %}

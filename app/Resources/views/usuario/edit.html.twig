@@ -1,21 +1,49 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Usuario edit</h1>
+    <h1 class="center">Editar Usuario</h1>
 
     {{ form_start(edit_form) }}
+
+    <div class="container">
+      <div class="row">
+        <div class="col s6">
+          {{ form_label(edit_form.nombre)}}
+          {{ form_widget(edit_form.nombre)}}
+          {{ form_errors(edit_form.nombre)}}
+        </div>
+        <div class="col s6">
+          {{ form_label(edit_form.apellidoPaterno)}}
+          {{ form_widget(edit_form.apellidoPaterno)}}
+          {{ form_errors(edit_form.apellidoPaterno)}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          {{ form_label(edit_form.apellidoMaterno)}}
+          {{ form_widget(edit_form.apellidoMaterno)}}
+          {{ form_errors(edit_form.apellidoMaterno)}}
+        </div>
+        <div class="col s6">
+          {{ form_label(edit_form.edad)}}
+          {{ form_widget(edit_form.edad)}}
+          {{ form_errors(edit_form.edad)}}
+        </div>
+      </div>
+    </div>
+
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+
+        <div class="fixed-action-btn horizontal">
+          <a class="btn-floating btn-large grey darken-2">
+            <i class="material-icons">more</i>
+          </a>
+          <ul>
+            <li><a  href="{{ path('usuario_index') }}" class="btn-floating grey darken-2"><i class="material-icons">backspace</i></a></li>
+            <li><button type="submit" value="Edit" class="btn-floating waves-effect waves-light grey darken-2"><i class="material-icons">edit</i></button></li>
+          </ul>
+        </div>
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('usuario_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
 {% endblock %}

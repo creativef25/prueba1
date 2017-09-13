@@ -1,44 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Usuario</h1>
+    <h1 class="center">Usuario</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ usuario.id }}</td>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <td>{{ usuario.nombre }}</td>
-            </tr>
-            <tr>
-                <th>Apellidopaterno</th>
-                <td>{{ usuario.apellidoPaterno }}</td>
-            </tr>
-            <tr>
-                <th>Apellidomaterno</th>
-                <td>{{ usuario.apellidoMaterno }}</td>
-            </tr>
-            <tr>
-                <th>Edad</th>
-                <td>{{ usuario.edad }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+      <table class="striped centered">
+        <tr>
+          <td><strong>Id</strong></td>
+          <td><strong>Nombre</strong></td>
+          <td><strong>Apellido Paterno</strong></td>
+          <td><strong>Apellido Materno</strong></td>
+          <td><strong>Edad</strong></td>
+        </tr>
+        <tr>
+          <td>{{ usuario.id}}</td>
+          <td>{{ usuario.nombre}}</td>
+          <td>{{ usuario.apellidoPaterno}}</td>
+          <td>{{ usuario.apellidoMaterno}}</td>
+          <td>{{ usuario.edad}}</td>
+        </tr>
+      </table>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('usuario_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}">Edit</a>
-        </li>
-        <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+
+            <div class="fixed-action-btn horizontal">
+              <a class="btn-floating btn-large grey darken-2">
+                <i class="material-icons">more</i>
+              </a>
+              <ul>
+                <li><a  href="{{ path('usuario_index') }}" class="btn-floating grey darken-2"><i class="material-icons">backspace</i></a></li>
+                <li><a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" class="btn-floating grey darken-2"><i class="material-icons">edit</i></a></li>
+                <li><button type="submit" value="Delete" class="btn-floating waves-effect waves-light grey darken-2"><i class="material-icons">delete</i></button></li>
+              </ul>
+            </div>
+            
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}
