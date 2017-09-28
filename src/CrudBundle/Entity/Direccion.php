@@ -129,7 +129,7 @@ class Direccion
         return $this;
     }
 
-    /**
+    /**}
      * Get numero
      *
      * @return int
@@ -138,33 +138,7 @@ class Direccion
     {
         return $this->numero;
     }
-    /**
-     * @var \CrudBundle\Entity\Usuario
-     */
-    private $usuarios;
-
-
-    /**
-     * Set usuarios
-     *
-     * @param \CrudBundle\Entity\Usuario $usuarios
-     *
-     * @return Direccion
-     */
-    public function setUsuarios(\CrudBundle\Entity\Usuario $usuarios = null)
-    {
-        $this->usuarios = $usuarios;
-
-        return $this;
-    }
-
-    /**
-     * Get usuarios
-     *
-     * @return \CrudBundle\Entity\Usuario
-     */
-    public function getUsuarios()
-    {
-        return $this->usuarios;
+    public function __toString(){
+      return $this->calle;
     }
 }

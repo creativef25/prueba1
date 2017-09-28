@@ -12,7 +12,6 @@ CrudBundle\Entity\Direccion:
         calle:
             type: string
             length: 255
-            column: Calle
         colonia:
             type: string
             length: 255
@@ -24,9 +23,4 @@ CrudBundle\Entity\Direccion:
         numero:
             type: integer
             column: Numero
-    manyToOne:
-      usuarios:
-        targetEntity: Usuario
-
-
     lifecycleCallbacks: {  }

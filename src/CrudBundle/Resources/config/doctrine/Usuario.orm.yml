@@ -24,4 +24,7 @@ CrudBundle\Entity\Usuario:
         edad:
             type: integer
             column: Edad
+    manyToOne:
+        calle:
+            targetEntity: Direccion
     lifecycleCallbacks: {  }
